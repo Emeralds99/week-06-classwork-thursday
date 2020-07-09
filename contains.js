@@ -15,8 +15,16 @@
 
 */
 function contains (item, value) {
-    return ''
+    for (const property in item) {
+        if (typeof item[property] == 'object') {
+            contains (item[property], value)
+        }
+        else if (item.hasOwnProperty(value)) {
+            return true
+        }
+    }
 }
+
 
 const nestedObject = {
     stuff: {
