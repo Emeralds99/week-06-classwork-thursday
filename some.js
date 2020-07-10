@@ -2,7 +2,14 @@
 Implement a some() function which takes an array of items and returns true if any item in the array is true
  */
 function some (items) {
-    return '';
+    for (let i = 0; i < items.length; i++) {
+        if (items.includes(true)) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 }
 
 
@@ -20,3 +27,5 @@ function some (items) {
 
  const result2 = some([false, false, false, true])
  console.assert(result2 === true, "Expected true")
+
+ console.log(some([false, false, true, false]))
